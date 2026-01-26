@@ -13,4 +13,13 @@ offset_right = 8.0
 offset_bottom = 8.0
 icon = ExtResource("1_43j68")
 
+[node name="HouseGrid" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 168
+theme_override_constants/v_separation = 168
+columns = 6
+
 [connection signal="pressed" from="Door" to="." method="_on_door_pressed"]
