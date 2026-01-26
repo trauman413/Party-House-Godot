@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://qqhr0m68pjya"]
+
+[ext_resource type="Texture2D" uid="uid://c5mcs27s0r3d8" path="res://icon.svg" id="1_43j68"]
+[ext_resource type="Script" uid="uid://dqiqdp07uaac1" path="res://scenes/party.gd" id="1_dqwn8"]
+[ext_resource type="PackedScene" uid="uid://cu015upwbpau4" path="res://entities/guest.tscn" id="2_d51to"]
+
+[node name="Party" type="Node"]
+script = ExtResource("1_dqwn8")
+guest = ExtResource("2_d51to")
+
+[node name="Door" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_43j68")
+
+[connection signal="pressed" from="Door" to="." method="_on_door_pressed"]
