@@ -8,10 +8,6 @@
 [node name="Party" type="Node"]
 script = ExtResource("1_dqwn8")
 guest = ExtResource("2_d51to")
-start_pos = null
-x_diff = null
-y_diff = null
-edge = null
 
 [node name="PartyController" type="Node" parent="."]
 script = ExtResource("3_2j1a7")

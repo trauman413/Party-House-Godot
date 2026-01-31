@@ -12,7 +12,11 @@ extends Node
 
 var curr_pos = start_pos
 var curr_house_members = 0
-	
+
+signal end_turn
+
+func _ready() -> void:
+	end_turn.connect(on_end_turn)
 
 func _on_door_pressed() -> void:
 	if curr_house_members < party_controller.house_size:
@@ -24,3 +28,17 @@ func _on_door_pressed() -> void:
 		if curr_pos.x > edge:
 			curr_pos.x = start_pos.x
 			curr_pos.y += y_diff
+	if (curr_house_members == party_controller.house_size):
+		print("END TURN")
+		print("=======")
+		end_turn.emit()
+
+func on_end_turn() -> void:
+	# TODO: change to calculate game state
+	var calc_population = 0
+	var calc_money = 0
+	for guest_type: Guest in house_grid.get_children():
+		calc_money += guest_type.guest_type.money
+		calc_population += guest_type.guest_type.population
+	print("Population: " + str(calc_population))
+	print("Money: " + str(calc_money))

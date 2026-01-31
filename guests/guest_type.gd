@@ -1,5 +1,5 @@
 extends Resource
-class_name Guest
+class_name Guest_Type
 
 @export var id: String
 @export var display_name: String
