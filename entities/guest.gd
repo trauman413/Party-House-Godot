@@ -1,7 +1,13 @@
 extends Node2D
 class_name Guest
 
-@export var guest_type: Guest_Type
+# TODO: may change to dictionary later
+@export var guest_pool: Array[Guest_Type]
+var guest_type
 
 func _ready() -> void:
-	print(guest_type.population)
+	guest_type = generate_guest_type()
+	print("Guest is: " + guest_type.display_name)
+
+func generate_guest_type() -> Guest_Type:
+	return guest_pool.pick_random()

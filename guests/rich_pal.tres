@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Guest_Type" load_steps=2 format=3 uid="uid://bokswm6c1syy8"]
+
+[ext_resource type="Script" uid="uid://vn8hys2e8v0s" path="res://guests/guest_type.gd" id="1_8kl1f"]
+
+[resource]
+script = ExtResource("1_8kl1f")
+id = "rich_pal"
+display_name = "Rich Pal"
+money = 1
+ability_description = "+1 Money"
