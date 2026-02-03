@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cu015upwbpau4"]
+[gd_scene load_steps=8 format=3 uid="uid://cu015upwbpau4"]
 
 [ext_resource type="Script" uid="uid://c777gk0i326j2" path="res://entities/guest.gd" id="1_v6tls"]
 [ext_resource type="Texture2D" uid="uid://c5mcs27s0r3d8" path="res://icon.svg" id="1_vik4k"]
@@ -6,10 +6,11 @@
 [ext_resource type="Script" uid="uid://vn8hys2e8v0s" path="res://guests/guest_type.gd" id="2_l18uu"]
 [ext_resource type="Resource" uid="uid://bokswm6c1syy8" path="res://guests/rich_pal.tres" id="4_i7owm"]
 [ext_resource type="Resource" uid="uid://b463bemob6jsn" path="res://guests/wild_buddy.tres" id="5_i7owm"]
+[ext_resource type="Resource" uid="uid://dnp2ro810jrjl" path="res://guests/hippie.tres" id="6_ok5dh"]
 
 [node name="Guest" type="Node2D"]
 script = ExtResource("1_v6tls")
-guest_pool = Array[ExtResource("2_l18uu")]([ExtResource("2_k85tp"), ExtResource("4_i7owm"), ExtResource("5_i7owm")])
+guest_pool = Array[ExtResource("2_l18uu")]([ExtResource("2_k85tp"), ExtResource("4_i7owm"), ExtResource("5_i7owm"), ExtResource("6_ok5dh")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vik4k")

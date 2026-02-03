@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Guest_Type" load_steps=2 format=3 uid="uid://dnp2ro810jrjl"]
+
+[ext_resource type="Script" uid="uid://vn8hys2e8v0s" path="res://guests/guest_type.gd" id="1_k8cud"]
+
+[resource]
+script = ExtResource("1_k8cud")
+id = "hippie"
+display_name = "Hippie"
+population = 1
+trouble = -1
