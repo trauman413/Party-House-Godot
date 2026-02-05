@@ -3,6 +3,7 @@ extends Node
 @onready var door: Button = $Door
 @onready var house_grid: GridContainer = $HouseGrid
 @onready var party_controller: Node = $PartyController
+@onready var cat: Sprite2D = $Cat/Sprite2D
 
 @export var guest: PackedScene
 @export var start_pos: Vector2 = Vector2(218, 136)
@@ -30,6 +31,8 @@ func _on_door_pressed() -> void:
 			curr_pos.x = start_pos.x
 			curr_pos.y += y_diff
 		global_trouble += new_guest.guest_type.trouble
+	if global_trouble == 2:
+		cat.rotate(90.0)
 	if global_trouble >= 3:
 		door.disabled = true
 		print("Too rowdy, police showed up and ended party")

@@ -26,4 +26,10 @@ theme_override_constants/h_separation = 168
 theme_override_constants/v_separation = 168
 columns = 6
 
+[node name="Cat" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Cat"]
+position = Vector2(1067, 66)
+texture = ExtResource("1_43j68")
+
 [connection signal="pressed" from="Door" to="." method="_on_door_pressed"]
