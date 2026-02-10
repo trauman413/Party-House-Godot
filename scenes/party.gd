@@ -16,6 +16,7 @@ var curr_house_members = 0
 var global_trouble = 0
 
 signal end_turn
+signal completed_round(new_money: int, new_population: int)
 
 func _ready() -> void:
 	end_turn.connect(on_end_turn)
@@ -37,6 +38,7 @@ func _on_door_pressed() -> void:
 		door.disabled = true
 		print("Too rowdy, police showed up and ended party")
 		await get_tree().create_timer(0.5).timeout
+		completed_round.emit(0, 0)
 		get_tree().quit()
 	if (curr_house_members == party_controller.house_size):
 		print("END TURN")
@@ -56,5 +58,6 @@ func on_end_turn() -> void:
 	print("Money: " + str(calc_money))
 	print("Trouble: " + str(trouble))
 	door.disabled = true
+	completed_round.emit(calc_money, calc_population)
 	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()

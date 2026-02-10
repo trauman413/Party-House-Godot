@@ -15,6 +15,10 @@ run/main_scene="uid://cty4q3ja88irp"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*res://scenes/game_state.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gdterm/plugin.cfg")
