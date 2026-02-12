@@ -7,7 +7,7 @@
 
 [node name="Party" type="Node"]
 script = ExtResource("1_dqwn8")
-guest = ExtResource("2_d51to")
+guest_data = ExtResource("2_d51to")
 
 [node name="PartyController" type="Node" parent="."]
 script = ExtResource("3_2j1a7")
