@@ -14,14 +14,17 @@ extends Node
 var curr_pos = start_pos
 var curr_house_members = 0
 var global_trouble = 0
+var party_state: Constants.PartyState
 
 signal end_turn
 signal completed_round(new_money: int, new_population: int)
 
 func _ready() -> void:
+	party_state = Constants.PartyState.NORMAL
 	end_turn.connect(on_end_turn)
 
 func _on_door_pressed() -> void:
+	# todo: need to test use case of trouble, trouble then hippie
 	if curr_house_members < party_controller.house_size:
 		var new_guest = guest_data.instantiate()
 		house_grid.add_child(new_guest)
@@ -32,9 +35,14 @@ func _on_door_pressed() -> void:
 			curr_pos.x = start_pos.x
 			curr_pos.y += y_diff
 		global_trouble += new_guest.guest_type.trouble
-	if global_trouble == 2:
-		cat.rotate(90.0)
+	if global_trouble == 2 && party_state != Constants.PartyState.WARNING:
+		party_state = Constants.PartyState.WARNING
+		cat.modulate = Color(0.831, 0.0, 0.0, 1.0)
+	elif global_trouble < 2:
+		party_state = Constants.PartyState.NORMAL
+		cat.modulate = Color(1,1,1,1.0)
 	if global_trouble >= 3:
+		party_state = Constants.PartyState.LOSE
 		door.disabled = true
 		print("Too rowdy, police showed up and ended party")
 		await get_tree().create_timer(0.5).timeout
