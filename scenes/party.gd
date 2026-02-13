@@ -45,9 +45,9 @@ func _on_door_pressed() -> void:
 		party_state = Constants.PartyState.LOSE
 		door.disabled = true
 		print("Too rowdy, police showed up and ended party")
-		await get_tree().create_timer(0.5).timeout
+		#await get_tree().create_timer(0.5).timeout
 		completed_round.emit(0, 0)
-		get_tree().quit()
+		#get_tree().quit()
 	if (curr_house_members == party_controller.house_size):
 		print("END TURN")
 		print("=======")
@@ -67,5 +67,5 @@ func on_end_turn() -> void:
 	print("Trouble: " + str(trouble))
 	door.disabled = true
 	completed_round.emit(calc_money, calc_population)
-	await get_tree().create_timer(0.5).timeout
-	get_tree().quit()
+	#await get_tree().create_timer(0.5).timeout
+	#get_tree().quit()

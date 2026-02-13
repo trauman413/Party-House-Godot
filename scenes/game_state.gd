@@ -5,8 +5,14 @@ enum PHASES { PARTY, PURCHASE }
 var global_money = 0
 var global_population = 0
 
-
-
-func _on_party_completed_round(new_money: int, new_population: int) -> void:
+func set_global_money(new_money: int):
 	global_money += new_money
-	global_population += new_population
+
+func set_global_population(new_pop: int):
+	global_population += new_pop
+	
+func get_global_money():
+	return global_money
+	
+func get_global_population():
+	return global_population
