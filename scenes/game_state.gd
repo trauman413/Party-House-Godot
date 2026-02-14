@@ -4,6 +4,7 @@ enum PHASES { PARTY, PURCHASE }
 
 var global_money = 0
 var global_population = 0
+var guest_deck: Array[Guest_Type] = []
 
 func set_global_money(new_money: int):
 	global_money += new_money
