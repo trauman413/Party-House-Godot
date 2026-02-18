@@ -22,6 +22,10 @@ signal completed_round(new_money: int, new_population: int)
 func _ready() -> void:
 	party_state = Constants.PartyState.NORMAL
 	end_turn.connect(on_end_turn)
+	
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("end_turn"):
+		end_turn.emit()
 
 func _on_door_pressed() -> void:
 	# todo: need to test use case of trouble, trouble then hippie
