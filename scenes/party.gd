@@ -15,6 +15,7 @@ var curr_pos = start_pos
 var curr_house_members = 0
 var global_trouble = 0
 var party_state: Constants.PartyState
+var guest_deck = []
 
 signal end_turn
 signal completed_round(new_money: int, new_population: int)
@@ -27,10 +28,26 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("end_turn"):
 		end_turn.emit()
 
+func set_guest_deck(
+	guest_dict: Dictionary[Guest_Type, int]
+):
+	var deck = quantity_dict_to_list(guest_dict)
+	deck.shuffle()
+	guest_deck = deck
+	
+func quantity_dict_to_list(
+	dict: Dictionary[Guest_Type,int]
+) -> Array[Guest_Type]:
+	var lst: Array[Guest_Type] = []
+	for key in dict:
+		for quantity in range(dict[key]):
+			lst.append(key)
+	return lst
+
 func _on_door_pressed() -> void:
 	# todo: need to test use case of trouble, trouble then hippie
 	if curr_house_members < party_controller.house_size:
-		var new_guest = guest_data.instantiate()
+		var new_guest = create_guest()
 		house_grid.add_child(new_guest)
 		curr_house_members += 1
 		new_guest.position = curr_pos
@@ -56,6 +73,12 @@ func _on_door_pressed() -> void:
 		print("END TURN")
 		print("=======")
 		end_turn.emit()
+
+func create_guest():
+	var new_guest = guest_data.instantiate()
+	var first_guest = guest_deck.pop_front()
+	new_guest.set_guest_type(first_guest)
+	return new_guest
 
 func on_end_turn() -> void:
 	# TODO: change to calculate game state
