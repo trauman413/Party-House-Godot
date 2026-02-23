@@ -3,8 +3,10 @@ extends Node
 @onready var game_state: Node = $"../GameState"
 @export var guest_pool: Array[Guest_Type]
 var party_scene = preload("res://scenes/party.tscn")
+var purchase_scene = preload("res://scenes/purchase.tscn")
 
 var party: Node
+var purchase: Node
 
 func reload_party_scene() -> void:
 	party = party_scene.instantiate()
@@ -12,6 +14,10 @@ func reload_party_scene() -> void:
 	party.completed_round.connect(_on_party_completed_round)
 	var guest_dict = get_guest_type_dict()
 	party.set_guest_deck(guest_dict)
+	
+func load_purchase_scene() -> void:
+	purchase = purchase_scene.instantiate()
+	get_parent().add_child.call_deferred((purchase))
 
 func _ready() -> void:
 	reload_party_scene()
@@ -19,7 +25,6 @@ func _ready() -> void:
 func get_guest_type_dict() -> Dictionary[Guest_Type, int]:
 	var dict: Dictionary[Guest_Type, int] = {}
 	var guest_deck: Dictionary[String, int] = game_state.get_guest_deck()
-	var guest_quantities = game_state.get_guest_deck()
 	for guest_type in guest_pool:
 		dict[guest_type] = guest_deck[guest_type.id]
 	return dict
