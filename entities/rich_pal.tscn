@@ -1,0 +1,61 @@
+[gd_scene load_steps=14 format=3 uid="uid://ugdl1ti3xsuf"]
+
+[ext_resource type="Script" uid="uid://khr3338xnfe" path="res://entities/rich_pal.gd" id="1_qtjtk"]
+[ext_resource type="Texture2D" uid="uid://igkqfywc2nbq" path="res://assets/rich_pal/s36_RichFriendM_0.png" id="1_yto0n"]
+[ext_resource type="Resource" uid="uid://bokswm6c1syy8" path="res://guests/rich_pal.tres" id="2_jbt8f"]
+[ext_resource type="Texture2D" uid="uid://b7m3i6p8jgtb" path="res://assets/rich_pal/s36_RichFriendM_1.png" id="2_qtjtk"]
+[ext_resource type="Texture2D" uid="uid://bf7rwhvdg30ry" path="res://assets/rich_pal/s36_RichFriendM_2.png" id="3_jbt8f"]
+[ext_resource type="Texture2D" uid="uid://fcxwnqgwybl8" path="res://assets/rich_pal/s36_RichFriendM_3.png" id="4_xsr4t"]
+[ext_resource type="Texture2D" uid="uid://bnlqt13rcvmfu" path="res://assets/rich_pal/s36_RichFriendM_4.png" id="5_4bmqu"]
+[ext_resource type="Texture2D" uid="uid://ch5muhqnpkrqr" path="res://assets/rich_pal/s36_RichFriendM_5.png" id="6_4umse"]
+[ext_resource type="Texture2D" uid="uid://djre2w27w46gm" path="res://assets/rich_pal/s36_RichFriendM_6.png" id="7_rlr80"]
+[ext_resource type="Texture2D" uid="uid://bcgusix1rbp0r" path="res://assets/rich_pal/s36_RichFriendM_7.png" id="8_6sopl"]
+[ext_resource type="Texture2D" uid="uid://bo05vja0tb0tg" path="res://assets/rich_pal/s36_RichFriendM_8.png" id="9_rrmsq"]
+[ext_resource type="Texture2D" uid="uid://ddi180pvdi15e" path="res://assets/rich_pal/s36_RichFriendM_9.png" id="10_xcccx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fflxf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yto0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qtjtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jbt8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xsr4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4bmqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4umse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rlr80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6sopl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rrmsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xcccx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="RichPal" type="Node2D"]
+script = ExtResource("1_qtjtk")
+metadata = ExtResource("2_jbt8f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fflxf")
+frame_progress = 0.27920064
