@@ -52,6 +52,7 @@ animations = [{
 }]
 
 [node name="RichPal" type="Node2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_qtjtk")
 metadata = ExtResource("2_jbt8f")
 

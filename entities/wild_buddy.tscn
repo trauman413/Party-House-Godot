@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhoom3i4a2yav"]
+
+[ext_resource type="Script" uid="uid://u7wt564ew0is" path="res://wild_buddy.gd" id="1_bmlt2"]
+[ext_resource type="Resource" uid="uid://b463bemob6jsn" path="res://guests/wild_buddy.tres" id="2_ax2fm"]
+[ext_resource type="Texture2D" uid="uid://vha0ffjhwbch" path="res://assets/wild_buddy/s36_WildFriendF_0.png" id="2_s1fhp"]
+[ext_resource type="Texture2D" uid="uid://bo5uqi37amcis" path="res://assets/wild_buddy/s36_WildFriendF_1.png" id="3_ax2fm"]
+[ext_resource type="Texture2D" uid="uid://b2538dq7wwvl1" path="res://assets/wild_buddy/s36_WildFriendF_2.png" id="4_oqn1i"]
+[ext_resource type="Texture2D" uid="uid://bs838f3vh16a0" path="res://assets/wild_buddy/s36_WildFriendF_3.png" id="5_xrhom"]
+[ext_resource type="Texture2D" uid="uid://c7f7pqgruimfm" path="res://assets/wild_buddy/s36_WildFriendF_4.png" id="6_01d0l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnfwo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s1fhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ax2fm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oqn1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xrhom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_01d0l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="WildBuddy" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_bmlt2")
+metadata = ExtResource("2_ax2fm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tnfwo")
+frame_progress = 0.5543273

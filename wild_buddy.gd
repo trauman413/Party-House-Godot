@@ -6,6 +6,6 @@ extends Guest
 func _ready() -> void:
 	super.initialize_metadata(metadata)
 	play()
-	
+
 func play():
 	animation.play()

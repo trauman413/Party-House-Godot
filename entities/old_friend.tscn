@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyb3bgoiko8dg"]
+
+[ext_resource type="Texture2D" uid="uid://py5pw6kmt2hg" path="res://assets/old_friend/s36_GoodBuddy2F_0.png" id="1_lyl81"]
+[ext_resource type="Script" uid="uid://ccoqqcbu162ei" path="res://entities/old_friend.gd" id="1_yg705"]
+[ext_resource type="Resource" uid="uid://ssudet2dg6pm" path="res://guests/old_friend.tres" id="2_xdjer"]
+[ext_resource type="Texture2D" uid="uid://dc7t48t1irayj" path="res://assets/old_friend/s36_GoodBuddy2F_1.png" id="2_yg705"]
+[ext_resource type="Texture2D" uid="uid://dkkjd1476low" path="res://assets/old_friend/s36_GoodBuddy2F_2.png" id="3_xdjer"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kp2k3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lyl81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yg705")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xdjer")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="OldFriend" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_yg705")
+metadata = ExtResource("2_xdjer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kp2k3")
+frame_progress = 0.4729546

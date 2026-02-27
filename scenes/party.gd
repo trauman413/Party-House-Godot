@@ -5,11 +5,16 @@ extends Node
 @onready var party_controller: Node = $PartyController
 @onready var cat: Sprite2D = $Cat/Sprite2D
 
-@export var guest_data: PackedScene
 @export var start_pos: Vector2 = Vector2(218, 136)
 @export var x_diff: int = 150
 @export var y_diff: int = 150
 @export var edge: int = 1000
+
+@export_group("Guest Types")
+@export var hippie: PackedScene
+@export var old_friend: PackedScene
+@export var rich_pal: PackedScene
+@export var wild_buddy: PackedScene
 
 var curr_pos = start_pos
 var curr_house_members = 0
@@ -55,7 +60,7 @@ func _on_door_pressed() -> void:
 		if curr_pos.x > edge:
 			curr_pos.x = start_pos.x
 			curr_pos.y += y_diff
-		global_trouble += new_guest.guest_type.trouble
+		global_trouble += new_guest.trouble
 	if global_trouble == 2 && party_state != Constants.PartyState.WARNING:
 		party_state = Constants.PartyState.WARNING
 		cat.modulate = Color(0.831, 0.0, 0.0, 1.0)
@@ -75,10 +80,24 @@ func _on_door_pressed() -> void:
 		end_turn.emit()
 
 func create_guest():
-	var new_guest = guest_data.instantiate()
 	var first_guest = guest_deck.pop_front()
-	new_guest.set_guest_type(first_guest)
+	var guest_to_node = get_first_guest_node(first_guest)
+	var new_guest: Guest = guest_to_node.instantiate()
+	#new_guest.play()
+	#new_guest.set_guest_type(first_guest)
 	return new_guest
+	
+func get_first_guest_node(guest_type: Guest_Type) -> PackedScene:
+	print(guest_type.id)
+	var guest: PackedScene
+	match guest_type.id:
+		"hippie": guest = hippie
+		"old_friend": guest = old_friend
+		"rich_pal": guest = rich_pal
+		"wild_buddy": guest = wild_buddy
+		_: guest = null
+	return guest
+		
 
 func on_end_turn() -> void:
 	# TODO: change to calculate game state
@@ -86,9 +105,9 @@ func on_end_turn() -> void:
 	var calc_money = 0
 	var trouble = 0
 	for guest_type: Guest in house_grid.get_children():
-		calc_money += guest_type.guest_type.money
-		calc_population += guest_type.guest_type.population
-		trouble += guest_type.guest_type.trouble
+		calc_money += guest_type.money
+		calc_population += guest_type.population
+		trouble += guest_type.trouble
 	print("Population: " + str(calc_population))
 	print("Money: " + str(calc_money))
 	print("Trouble: " + str(trouble))

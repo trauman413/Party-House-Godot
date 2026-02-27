@@ -1,3 +1,4 @@
+@abstract
 extends Node2D
 class_name Guest
 
@@ -22,3 +23,6 @@ func initialize_metadata(metadata: Guest_Type):
 	money = metadata.money
 	trouble = metadata.trouble
 	ability_description = metadata.ability_description
+
+@abstract
+func play()
