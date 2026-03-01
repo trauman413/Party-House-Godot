@@ -4,6 +4,9 @@ extends Node
 @onready var house_grid: GridContainer = $HouseGrid
 @onready var party_controller: Node = $PartyController
 @onready var cat: Sprite2D = $Cat/Sprite2D
+@onready var population_label: Label = %PopulationLabel
+@onready var money_label: Label = %MoneyLabel
+
 
 @export var start_pos: Vector2 = Vector2(218, 136)
 @export var x_diff: int = 150
@@ -21,6 +24,8 @@ var curr_house_members = 0
 var global_trouble = 0
 var party_state: Constants.PartyState
 var guest_deck = []
+var global_population: int
+var global_money: int
 
 signal end_turn
 signal completed_round(new_money: int, new_population: int)
@@ -28,6 +33,8 @@ signal completed_round(new_money: int, new_population: int)
 func _ready() -> void:
 	party_state = Constants.PartyState.NORMAL
 	end_turn.connect(on_end_turn)
+	population_label.text = "POP: " + str(global_population)
+	money_label.text = "MONEY: " + str(global_money)
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("end_turn"):

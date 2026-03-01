@@ -12,6 +12,8 @@ func reload_party_scene() -> void:
 	party = party_scene.instantiate()
 	get_parent().add_child.call_deferred((party))
 	party.completed_round.connect(_on_party_completed_round)
+	party.global_population = game_state.get_global_population()
+	party.global_money = game_state.get_global_money()
 	var guest_dict = get_guest_type_dict()
 	party.set_guest_deck(guest_dict)
 	
