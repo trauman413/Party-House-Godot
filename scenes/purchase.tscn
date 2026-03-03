@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdq3s6mt1ruvk"]
+[gd_scene load_steps=6 format=3 uid="uid://bdq3s6mt1ruvk"]
 
+[ext_resource type="PackedScene" uid="uid://b41iv5srt4w5h" path="res://ui/purchase_panel.tscn" id="1_3t24u"]
 [ext_resource type="PackedScene" uid="uid://dyb3bgoiko8dg" path="res://entities/old_friend.tscn" id="1_44i1a"]
 [ext_resource type="PackedScene" uid="uid://ugdl1ti3xsuf" path="res://entities/rich_pal.tscn" id="2_3t24u"]
 [ext_resource type="PackedScene" uid="uid://c7s5endbq03kd" path="res://entities/hippie.tscn" id="3_rbukx"]
@@ -20,26 +21,18 @@ theme_override_constants/h_separation = 100
 theme_override_constants/v_separation = 100
 columns = 9
 
-[node name="Panel" type="PanelContainer" parent="GridContainer"]
+[node name="OldFriendPanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
 layout_mode = 2
+guest_scene = ExtResource("1_44i1a")
 
-[node name="OldFriend" parent="GridContainer/Panel" instance=ExtResource("1_44i1a")]
-position = Vector2(47, 66)
-
-[node name="Panel2" type="PanelContainer" parent="GridContainer"]
+[node name="RichPalPanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
 layout_mode = 2
+guest_scene = ExtResource("2_3t24u")
 
-[node name="RichPal" parent="GridContainer/Panel2" instance=ExtResource("2_3t24u")]
-position = Vector2(53, 66)
-
-[node name="Panel3" type="PanelContainer" parent="GridContainer"]
+[node name="WildBuddyPanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
 layout_mode = 2
+guest_scene = ExtResource("4_u0iaj")
 
-[node name="WildBuddy" parent="GridContainer/Panel3" instance=ExtResource("4_u0iaj")]
-position = Vector2(56, 66)
-
-[node name="Panel4" type="PanelContainer" parent="GridContainer"]
+[node name="HippiePanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
 layout_mode = 2
-
-[node name="Hippie" parent="GridContainer/Panel4" instance=ExtResource("3_rbukx")]
-position = Vector2(62, 66)
+guest_scene = ExtResource("3_rbukx")
