@@ -6,6 +6,7 @@ extends Node
 @onready var cat: Sprite2D = $Cat/Sprite2D
 @onready var population_label: Label = %PopulationLabel
 @onready var money_label: Label = %MoneyLabel
+@onready var turn_label: Label = %TurnLabel
 
 
 @export var start_pos: Vector2 = Vector2(218, 136)
@@ -26,6 +27,7 @@ var party_state: Constants.PartyState
 var guest_deck = []
 var global_population: int
 var global_money: int
+var current_turn: int
 
 signal end_turn
 signal completed_round(new_money: int, new_population: int)
@@ -35,6 +37,8 @@ func _ready() -> void:
 	end_turn.connect(on_end_turn)
 	population_label.text = "POP: " + str(global_population)
 	money_label.text = "MONEY: " + str(global_money)
+	turn_label.text = "TURN: " + str(current_turn)
+	
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("end_turn"):

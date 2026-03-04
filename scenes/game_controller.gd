@@ -14,6 +14,7 @@ func reload_party_scene() -> void:
 	party.completed_round.connect(_on_party_completed_round)
 	party.global_population = game_state.get_global_population()
 	party.global_money = game_state.get_global_money()
+	party.current_turn = game_state.get_turn_count()
 	var guest_dict = get_guest_type_dict()
 	party.set_guest_deck(guest_dict)
 	
@@ -39,4 +40,12 @@ func _on_party_completed_round(new_money: int, new_population: int) -> void:
 	print("GLOBAL POP: " + str(game_state.get_global_population()))
 	await get_tree().create_timer(0.5).timeout
 	party.queue_free()
-	reload_party_scene()
+	game_state.decrement_turns()
+	load_purchase_scene()
+	#reload_party_scene()
+
+
+func _on_game_over() -> void:
+	print("GAME OVER, YOU LOSE")
+	await get_tree().create_timer(0.5).timeout
+	get_tree().quit()

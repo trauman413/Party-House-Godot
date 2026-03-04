@@ -11,7 +11,10 @@ var global_guests: Dictionary[String, int] = {
 } 
 var global_money = 0
 var global_population = 0
+var turns_remaining = 40
 var house_size = 5
+
+signal game_over
 
 func set_global_money(new_money: int):
 	global_money += new_money
@@ -33,3 +36,11 @@ func get_global_population():
 	
 func get_guest_deck():
 	return global_guests
+
+func decrement_turns():
+	turns_remaining -= 1
+	if turns_remaining == 0:
+		game_over.emit()
+	
+func get_turn_count():
+	return turns_remaining

@@ -16,3 +16,5 @@ guest_pool = Array[ExtResource("2_o6xl0")]([ExtResource("3_tipki"), ExtResource(
 
 [node name="GameState" type="Node" parent="."]
 script = ExtResource("1_0wfyh")
+
+[connection signal="game_over" from="GameState" to="GameController" method="_on_game_over"]
