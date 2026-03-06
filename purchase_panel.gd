@@ -17,5 +17,7 @@ func _ready() -> void:
 	money_label.text = str(guest.money)
 	population_label.text = str(guest.population)
 	#ability_label.text = guest.ability_description
-#
-	
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		print("Buying " + guest.display_name)
