@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://br28v3jti0kqa"]
+
+[node name="CurrencyUI" type="VBoxContainer"]
+offset_left = 1067.0
+offset_top = 200.0
+offset_right = 1117.0
+offset_bottom = 240.0
+
+[node name="PopulationLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "POP: 0"
+
+[node name="MoneyLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TurnLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "TURN: 0"
+max_lines_visible = 1

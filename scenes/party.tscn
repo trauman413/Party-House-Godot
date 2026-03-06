@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://qqhr0m68pjya"]
+[gd_scene load_steps=9 format=3 uid="uid://qqhr0m68pjya"]
 
 [ext_resource type="Texture2D" uid="uid://c5mcs27s0r3d8" path="res://icon.svg" id="1_43j68"]
 [ext_resource type="Script" uid="uid://dqiqdp07uaac1" path="res://scenes/party.gd" id="1_dqwn8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dyb3bgoiko8dg" path="res://entities/old_friend.tscn" id="3_7y3g2"]
 [ext_resource type="PackedScene" uid="uid://ugdl1ti3xsuf" path="res://entities/rich_pal.tscn" id="4_dvx2i"]
 [ext_resource type="PackedScene" uid="uid://bhoom3i4a2yav" path="res://entities/wild_buddy.tscn" id="5_7qh7n"]
+[ext_resource type="PackedScene" uid="uid://br28v3jti0kqa" path="res://ui/currency.tscn" id="8_7y3g2"]
 
 [node name="Party" type="Node"]
 script = ExtResource("1_dqwn8")
@@ -38,25 +39,8 @@ columns = 6
 position = Vector2(1067, 66)
 texture = ExtResource("1_43j68")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 1067.0
-offset_top = 200.0
-offset_right = 1117.0
-offset_bottom = 240.0
-
-[node name="PopulationLabel" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "POP: 0"
-
-[node name="MoneyLabel" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="TurnLabel" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "TURN: 0"
-max_lines_visible = 1
+[node name="CurrencyUI" parent="." instance=ExtResource("8_7y3g2")]
 
 [connection signal="pressed" from="Door" to="." method="_on_door_pressed"]
+
+[editable path="CurrencyUI"]

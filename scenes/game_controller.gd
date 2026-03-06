@@ -21,6 +21,10 @@ func reload_party_scene() -> void:
 func load_purchase_scene() -> void:
 	purchase = purchase_scene.instantiate()
 	get_parent().add_child.call_deferred((purchase))
+	purchase.finished_purchase.connect(_on_purchase_completed_round)
+	purchase.global_population = game_state.get_global_population()
+	purchase.global_money = game_state.get_global_money()
+	purchase.current_turn = game_state.get_turn_count()
 
 func _ready() -> void:
 	reload_party_scene()
@@ -49,3 +53,16 @@ func _on_game_over() -> void:
 	print("GAME OVER, YOU LOSE")
 	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()
+	
+
+func _on_purchase_completed_round(
+	guest_id: String,
+	cost_pop: int,
+	cost_money: int
+):
+	game_state.update_guests(guest_id)
+	game_state.set_global_population((-1 * cost_pop))
+	game_state.set_global_money((-1 * cost_money))
+	await get_tree().create_timer(0.5).timeout
+	purchase.queue_free()
+	reload_party_scene()

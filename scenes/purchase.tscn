@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdq3s6mt1ruvk"]
+[gd_scene load_steps=8 format=3 uid="uid://bdq3s6mt1ruvk"]
 
 [ext_resource type="PackedScene" uid="uid://b41iv5srt4w5h" path="res://ui/purchase_panel.tscn" id="1_3t24u"]
 [ext_resource type="PackedScene" uid="uid://dyb3bgoiko8dg" path="res://entities/old_friend.tscn" id="1_44i1a"]
+[ext_resource type="Script" uid="uid://35n8u2vi6hq5" path="res://scenes/purchase.gd" id="1_u0iaj"]
 [ext_resource type="PackedScene" uid="uid://ugdl1ti3xsuf" path="res://entities/rich_pal.tscn" id="2_3t24u"]
 [ext_resource type="PackedScene" uid="uid://c7s5endbq03kd" path="res://entities/hippie.tscn" id="3_rbukx"]
 [ext_resource type="PackedScene" uid="uid://bhoom3i4a2yav" path="res://entities/wild_buddy.tscn" id="4_u0iaj"]
+[ext_resource type="PackedScene" uid="uid://br28v3jti0kqa" path="res://ui/currency.tscn" id="6_rbukx"]
 
 [node name="Purchase" type="Node"]
+script = ExtResource("1_u0iaj")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_direction = 2
@@ -22,17 +25,25 @@ theme_override_constants/v_separation = 100
 columns = 9
 
 [node name="OldFriendPanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
+unique_name_in_owner = true
 layout_mode = 2
 guest_scene = ExtResource("1_44i1a")
 
 [node name="RichPalPanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
+unique_name_in_owner = true
 layout_mode = 2
 guest_scene = ExtResource("2_3t24u")
 
 [node name="WildBuddyPanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
+unique_name_in_owner = true
 layout_mode = 2
 guest_scene = ExtResource("4_u0iaj")
 
 [node name="HippiePanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
+unique_name_in_owner = true
 layout_mode = 2
 guest_scene = ExtResource("3_rbukx")
+
+[node name="CurrencyUI" parent="." instance=ExtResource("6_rbukx")]
+
+[editable path="CurrencyUI"]

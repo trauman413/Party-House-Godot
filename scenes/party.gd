@@ -4,9 +4,10 @@ extends Node
 @onready var house_grid: GridContainer = $HouseGrid
 @onready var party_controller: Node = $PartyController
 @onready var cat: Sprite2D = $Cat/Sprite2D
-@onready var population_label: Label = %PopulationLabel
-@onready var money_label: Label = %MoneyLabel
-@onready var turn_label: Label = %TurnLabel
+@onready var currency_ui: VBoxContainer = $CurrencyUI
+@onready var population_label: Label = $CurrencyUI/PopulationLabel
+@onready var money_label: Label = $CurrencyUI/MoneyLabel
+@onready var turn_label: Label = $CurrencyUI/TurnLabel
 
 
 @export var start_pos: Vector2 = Vector2(218, 136)
@@ -38,6 +39,7 @@ func _ready() -> void:
 	population_label.text = "POP: " + str(global_population)
 	money_label.text = "MONEY: " + str(global_money)
 	turn_label.text = "TURN: " + str(current_turn)
+	
 	
 	
 func _process(_delta: float) -> void:
