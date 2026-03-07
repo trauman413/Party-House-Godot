@@ -7,3 +7,4 @@ class_name Guest_Type
 @export var money: int
 @export var trouble: int
 @export_multiline var ability_description: String
+@export var cost: int

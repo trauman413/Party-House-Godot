@@ -60,9 +60,13 @@ func _on_purchase_completed_round(
 	cost_pop: int,
 	cost_money: int
 ):
-	game_state.update_guests(guest_id)
-	game_state.set_global_population((-1 * cost_pop))
-	game_state.set_global_money((-1 * cost_money))
+	if cost_pop > game_state.get_global_population():
+		print("Cannot purchase, too expensive")
+	else:
+		game_state.update_guests(guest_id)
+		game_state.set_global_population((-1 * cost_pop))
+		game_state.set_global_money((-1 * cost_money))
+	# todo: will need to change below to only end when clicking "END" button
 	await get_tree().create_timer(0.5).timeout
 	purchase.queue_free()
 	reload_party_scene()

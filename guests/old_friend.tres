@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Guest" load_steps=2 format=3 uid="uid://ssudet2dg6pm"]
+[gd_resource type="Resource" script_class="Guest_Type" load_steps=2 format=3 uid="uid://ssudet2dg6pm"]
 
 [ext_resource type="Script" uid="uid://vn8hys2e8v0s" path="res://guests/guest_type.gd" id="1_76jvp"]
 
@@ -8,3 +8,4 @@ id = "old_friend"
 display_name = "Old Friend"
 population = 1
 ability_description = "+1 Population"
+cost = 2

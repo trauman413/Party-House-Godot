@@ -9,6 +9,7 @@ var population: int
 var money: int
 var trouble: int
 var ability_description: String
+var cost: int
 
 func _ready() -> void:
 	print("Guest is: " + guest_type.display_name)
@@ -23,6 +24,7 @@ func initialize_metadata(metadata: Guest_Type):
 	money = metadata.money
 	trouble = metadata.trouble
 	ability_description = metadata.ability_description
+	cost = metadata.cost
 
 @abstract
 func play()

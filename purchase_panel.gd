@@ -7,6 +7,7 @@ class_name PurchasePanel
 @onready var money_label: Label = %MoneyLabel
 @onready var population_label: Label = %PopulationLabel
 @onready var ability_label: Label = %AbilityLabel
+@onready var cost_label: Label = %CostLabel
 
 var guest: Guest
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 	name_label.text = guest.display_name
 	money_label.text = str(guest.money)
 	population_label.text = str(guest.population)
+	cost_label.text = str("Cost: " + str(guest.cost))
 	#ability_label.text = guest.ability_description
 	# TODO: account for number that can be bought
 
@@ -26,4 +28,4 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		self.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 		print("Buying " + guest.display_name)
-		purchased.emit(guest.id, 1, 1) # TODO: change to be static field on json
+		purchased.emit(guest.id, guest.cost, 0) # TODO: change to be static field on json

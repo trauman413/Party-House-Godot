@@ -8,3 +8,4 @@ id = "rich_pal"
 display_name = "Rich Pal"
 money = 1
 ability_description = "+1 Money"
+cost = 3

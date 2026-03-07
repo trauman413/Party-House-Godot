@@ -8,3 +8,4 @@ id = "hippie"
 display_name = "Hippie"
 population = 1
 trouble = -1
+cost = 4

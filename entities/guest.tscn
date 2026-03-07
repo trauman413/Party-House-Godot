@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu015upwbpau4"]
+[gd_scene load_steps=2 format=3 uid="uid://cu015upwbpau4"]
 
-[ext_resource type="Script" uid="uid://c777gk0i326j2" path="res://entities/guest.gd" id="1_v6tls"]
 [ext_resource type="Texture2D" uid="uid://c5mcs27s0r3d8" path="res://icon.svg" id="1_vik4k"]
 
 [node name="Guest" type="Node2D"]
-script = ExtResource("1_v6tls")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vik4k")
