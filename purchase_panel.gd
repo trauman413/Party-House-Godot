@@ -24,5 +24,6 @@ func _ready() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
+		self.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 		print("Buying " + guest.display_name)
 		purchased.emit(guest.id, 1, 1) # TODO: change to be static field on json
