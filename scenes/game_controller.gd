@@ -21,7 +21,8 @@ func reload_party_scene() -> void:
 func load_purchase_scene() -> void:
 	purchase = purchase_scene.instantiate()
 	get_parent().add_child.call_deferred((purchase))
-	purchase.finished_purchase.connect(_on_purchase_completed_round)
+	purchase.make_purchase.connect(_on_make_purchase)
+	purchase.end_round.connect(_on_end_button_pressed)
 	purchase.global_population = game_state.get_global_population()
 	purchase.global_money = game_state.get_global_money()
 	purchase.current_turn = game_state.get_turn_count()
@@ -55,7 +56,7 @@ func _on_game_over() -> void:
 	get_tree().quit()
 	
 
-func _on_purchase_completed_round(
+func _on_make_purchase(
 	guest_id: String,
 	cost_pop: int,
 	cost_money: int
@@ -67,6 +68,9 @@ func _on_purchase_completed_round(
 		game_state.set_global_population((-1 * cost_pop))
 		game_state.set_global_money((-1 * cost_money))
 	# todo: will need to change below to only end when clicking "END" button
+	
+func _on_end_button_pressed():
 	await get_tree().create_timer(0.5).timeout
+	print("QUEUE FREEEEE")
 	purchase.queue_free()
 	reload_party_scene()

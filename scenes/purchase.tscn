@@ -46,4 +46,13 @@ guest_scene = ExtResource("3_rbukx")
 
 [node name="CurrencyUI" parent="." instance=ExtResource("6_rbukx")]
 
+[node name="EndButton" type="Button" parent="."]
+offset_left = 916.0
+offset_top = 294.0
+offset_right = 1060.0
+offset_bottom = 360.0
+text = "END"
+
+[connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]
+
 [editable path="CurrencyUI"]
