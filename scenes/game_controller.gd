@@ -9,6 +9,7 @@ var party: Node
 var purchase: Node
 
 func reload_party_scene() -> void:
+	print(GameState.get_guest_deck())
 	party = party_scene.instantiate()
 	get_parent().add_child.call_deferred((party))
 	party.completed_round.connect(_on_party_completed_round)
@@ -64,13 +65,16 @@ func _on_make_purchase(
 	if cost_pop > game_state.get_global_population():
 		print("Cannot purchase, too expensive")
 	else:
-		game_state.update_guests(guest_id)
-		game_state.set_global_population((-1 * cost_pop))
-		game_state.set_global_money((-1 * cost_money))
+		GameState.update_guests(guest_id)
+		GameState.set_global_population((-1 * cost_pop))
+		GameState.set_global_money((-1 * cost_money))
+		purchase.global_population = game_state.get_global_population()
+		purchase.global_money = game_state.get_global_money()
+		purchase.current_turn = game_state.get_turn_count()
 	# todo: will need to change below to only end when clicking "END" button
 	
 func _on_end_button_pressed():
-	await get_tree().create_timer(0.5).timeout
 	print("QUEUE FREEEEE")
 	purchase.queue_free()
+	print(get_parent().get_children())
 	reload_party_scene()

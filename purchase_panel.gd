@@ -24,6 +24,7 @@ func _ready() -> void:
 	#ability_label.text = guest.ability_description
 	# TODO: account for number that can be bought
 
+# TODO: can refactor to just call GameState directly
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		self.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)

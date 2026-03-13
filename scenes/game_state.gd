@@ -23,6 +23,7 @@ func set_global_population(new_pop: int):
 	global_population += new_pop
 	
 func update_guests(guestId: String):
+	print("hiya")
 	if guestId in global_guests:
 		global_guests[guestId] += 1
 	else:

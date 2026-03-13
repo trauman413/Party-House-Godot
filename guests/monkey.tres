@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Guest_Type" load_steps=2 format=3 uid="uid://b4o6frix4ir31"]
+
+[ext_resource type="Script" uid="uid://vn8hys2e8v0s" path="res://guests/guest_type.gd" id="1_mghyc"]
+
+[resource]
+script = ExtResource("1_mghyc")
+id = "monkey"
+display_name = "Monkey"
+population = 4
+trouble = 1
+ability_description = "Trouble! +4 Population"
+cost = 3
