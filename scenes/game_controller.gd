@@ -45,6 +45,7 @@ func _on_party_completed_round(new_money: int, new_population: int) -> void:
 	print("GLOBAL MONEY: " + str(game_state.get_global_money()))
 	print("GLOBAL POP: " + str(game_state.get_global_population()))
 	await get_tree().create_timer(0.5).timeout
+	get_parent().remove_child(party)
 	party.queue_free()
 	game_state.decrement_turns()
 	load_purchase_scene()
@@ -75,6 +76,6 @@ func _on_make_purchase(
 	
 func _on_end_button_pressed():
 	print("QUEUE FREEEEE")
+	get_parent().remove_child(purchase)
 	purchase.queue_free()
-	print(get_parent().get_children())
 	reload_party_scene()
