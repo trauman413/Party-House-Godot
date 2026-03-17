@@ -1,6 +1,5 @@
 extends Node
 
-@onready var game_state: Node = $"../GameState"
 @export var guest_pool: Array[Guest_Type]
 var party_scene = preload("res://scenes/party.tscn")
 var purchase_scene = preload("res://scenes/purchase.tscn")
@@ -13,9 +12,9 @@ func reload_party_scene() -> void:
 	party = party_scene.instantiate()
 	get_parent().add_child.call_deferred((party))
 	party.completed_round.connect(_on_party_completed_round)
-	party.global_population = game_state.get_global_population()
-	party.global_money = game_state.get_global_money()
-	party.current_turn = game_state.get_turn_count()
+	party.global_population = GameState.get_global_population()
+	party.global_money = GameState.get_global_money()
+	party.current_turn = GameState.get_turn_count()
 	var guest_dict = get_guest_type_dict()
 	party.set_guest_deck(guest_dict)
 	
@@ -24,30 +23,30 @@ func load_purchase_scene() -> void:
 	get_parent().add_child.call_deferred((purchase))
 	purchase.make_purchase.connect(_on_make_purchase)
 	purchase.end_round.connect(_on_end_button_pressed)
-	purchase.global_population = game_state.get_global_population()
-	purchase.global_money = game_state.get_global_money()
-	purchase.current_turn = game_state.get_turn_count()
+	purchase.global_population = GameState.get_global_population()
+	purchase.global_money = GameState.get_global_money()
+	purchase.current_turn = GameState.get_turn_count()
 
 func _ready() -> void:
 	reload_party_scene()
 	
 func get_guest_type_dict() -> Dictionary[Guest_Type, int]:
 	var dict: Dictionary[Guest_Type, int] = {}
-	var guest_deck: Dictionary[String, int] = game_state.get_guest_deck()
+	var guest_deck: Dictionary[String, int] = GameState.get_guest_deck()
 	for guest_type in guest_pool:
 		dict[guest_type] = guest_deck[guest_type.id]
 	return dict
 
 func _on_party_completed_round(new_money: int, new_population: int) -> void:
-	game_state.set_global_money(new_money)
-	game_state.set_global_population(new_population)
+	GameState.set_global_money(new_money)
+	GameState.set_global_population(new_population)
 	print("========GLOBAL CALCS=========")
-	print("GLOBAL MONEY: " + str(game_state.get_global_money()))
-	print("GLOBAL POP: " + str(game_state.get_global_population()))
+	print("GLOBAL MONEY: " + str(GameState.get_global_money()))
+	print("GLOBAL POP: " + str(GameState.get_global_population()))
 	await get_tree().create_timer(0.5).timeout
 	get_parent().remove_child(party)
 	party.queue_free()
-	game_state.decrement_turns()
+	GameState.decrement_turns()
 	load_purchase_scene()
 	#reload_party_scene()
 
@@ -63,15 +62,15 @@ func _on_make_purchase(
 	cost_pop: int,
 	cost_money: int
 ):
-	if cost_pop > game_state.get_global_population():
+	if cost_pop > GameState.get_global_population():
 		print("Cannot purchase, too expensive")
 	else:
 		GameState.update_guests(guest_id)
 		GameState.set_global_population((-1 * cost_pop))
 		GameState.set_global_money((-1 * cost_money))
-		purchase.global_population = game_state.get_global_population()
-		purchase.global_money = game_state.get_global_money()
-		purchase.current_turn = game_state.get_turn_count()
+		purchase.global_population = GameState.get_global_population()
+		purchase.global_money = GameState.get_global_money()
+		purchase.current_turn = GameState.get_turn_count()
 	# todo: will need to change below to only end when clicking "END" button
 	
 func _on_end_button_pressed():
