@@ -76,5 +76,5 @@ func _on_make_purchase(
 func _on_end_button_pressed():
 	print("QUEUE FREEEEE")
 	get_parent().remove_child(purchase)
-	purchase.queue_free()
+	#purchase.queue_free()
 	reload_party_scene()

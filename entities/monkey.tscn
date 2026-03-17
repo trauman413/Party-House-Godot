@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjq00mcydyu07"]
 
-[ext_resource type="Script" uid="uid://bge8arcmxu3cs" path="res://entities/monkey.gd" id="1_inpu2"]
 [ext_resource type="Texture2D" uid="uid://0p4x0tqadyhd" path="res://assets/monkey/s36_Monkey_0.png" id="1_p362r"]
+[ext_resource type="Script" uid="uid://dmqonfldpjd6p" path="res://entities/generic_guest.gd" id="1_qjovf"]
 [ext_resource type="Texture2D" uid="uid://b0eq1nu4slqy" path="res://assets/monkey/s36_Monkey_1.png" id="2_inpu2"]
 [ext_resource type="Resource" uid="uid://b4o6frix4ir31" path="res://guests/monkey.tres" id="2_qjovf"]
 [ext_resource type="Texture2D" uid="uid://cvvnhkhcm147e" path="res://assets/monkey/s36_Monkey_2.png" id="3_qjovf"]
@@ -25,7 +25,7 @@ animations = [{
 
 [node name="Monkey" type="Node2D"]
 scale = Vector2(4, 4)
-script = ExtResource("1_inpu2")
+script = ExtResource("1_qjovf")
 metadata = ExtResource("2_qjovf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

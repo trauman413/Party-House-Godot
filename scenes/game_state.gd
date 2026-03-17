@@ -2,12 +2,12 @@ extends Node
 
 enum PHASES { PARTY, PURCHASE }
 
-# todo: hippie isn't in starting deck
 var global_guests: Dictionary[String, int] = {
 	"old_friend": 4,
 	"rich_pal": 2,
 	"wild_buddy": 4,
-	"hippie": 0
+	"hippie": 0,
+	"monkey": 0
 } 
 var global_money = 0
 var global_population = 0
@@ -23,7 +23,6 @@ func set_global_population(new_pop: int):
 	global_population += new_pop
 	
 func update_guests(guestId: String):
-	print("hiya")
 	if guestId in global_guests:
 		global_guests[guestId] += 1
 	else:

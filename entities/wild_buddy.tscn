@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhoom3i4a2yav"]
 
-[ext_resource type="Script" uid="uid://u7wt564ew0is" path="res://wild_buddy.gd" id="1_bmlt2"]
+[ext_resource type="Script" uid="uid://dmqonfldpjd6p" path="res://entities/generic_guest.gd" id="1_s1fhp"]
 [ext_resource type="Resource" uid="uid://b463bemob6jsn" path="res://guests/wild_buddy.tres" id="2_ax2fm"]
 [ext_resource type="Texture2D" uid="uid://vha0ffjhwbch" path="res://assets/wild_buddy/s36_WildFriendF_0.png" id="2_s1fhp"]
 [ext_resource type="Texture2D" uid="uid://bo5uqi37amcis" path="res://assets/wild_buddy/s36_WildFriendF_1.png" id="3_ax2fm"]
@@ -33,7 +33,7 @@ animations = [{
 
 [node name="WildBuddy" type="Node2D"]
 scale = Vector2(4, 4)
-script = ExtResource("1_bmlt2")
+script = ExtResource("1_s1fhp")
 metadata = ExtResource("2_ax2fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

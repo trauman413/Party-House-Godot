@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ugdl1ti3xsuf"]
 
-[ext_resource type="Script" uid="uid://khr3338xnfe" path="res://entities/rich_pal.gd" id="1_qtjtk"]
+[ext_resource type="Script" uid="uid://dmqonfldpjd6p" path="res://entities/generic_guest.gd" id="1_jbt8f"]
 [ext_resource type="Texture2D" uid="uid://igkqfywc2nbq" path="res://assets/rich_pal/s36_RichFriendM_0.png" id="1_yto0n"]
 [ext_resource type="Resource" uid="uid://bokswm6c1syy8" path="res://guests/rich_pal.tres" id="2_jbt8f"]
 [ext_resource type="Texture2D" uid="uid://b7m3i6p8jgtb" path="res://assets/rich_pal/s36_RichFriendM_1.png" id="2_qtjtk"]
@@ -53,7 +53,7 @@ animations = [{
 
 [node name="RichPal" type="Node2D"]
 scale = Vector2(4, 4)
-script = ExtResource("1_qtjtk")
+script = ExtResource("1_jbt8f")
 metadata = ExtResource("2_jbt8f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

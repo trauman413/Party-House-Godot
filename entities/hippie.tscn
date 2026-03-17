@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7s5endbq03kd"]
 
-[ext_resource type="Script" uid="uid://dbq7ndu086xf7" path="res://entities/hippie.gd" id="1_1qq8y"]
 [ext_resource type="Texture2D" uid="uid://bwjkan0rbrmat" path="res://assets/hippie/s36_Hippy_0.png" id="1_87pra"]
+[ext_resource type="Script" uid="uid://dmqonfldpjd6p" path="res://entities/generic_guest.gd" id="1_a6ie4"]
 [ext_resource type="Texture2D" uid="uid://b60kirbtf8grq" path="res://assets/hippie/s36_Hippy_1.png" id="2_1qq8y"]
 [ext_resource type="Resource" uid="uid://dnp2ro810jrjl" path="res://guests/hippie.tres" id="2_a6ie4"]
 [ext_resource type="Texture2D" uid="uid://br2u2skrwm1ww" path="res://assets/hippie/s36_Hippy_2.png" id="3_a6ie4"]
@@ -25,7 +25,7 @@ animations = [{
 
 [node name="Hippie" type="Node2D"]
 scale = Vector2(4, 4)
-script = ExtResource("1_1qq8y")
+script = ExtResource("1_a6ie4")
 metadata = ExtResource("2_a6ie4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
