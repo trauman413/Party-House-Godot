@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qqhr0m68pjya"]
+[gd_scene load_steps=12 format=3 uid="uid://qqhr0m68pjya"]
 
 [ext_resource type="Texture2D" uid="uid://c5mcs27s0r3d8" path="res://icon.svg" id="1_43j68"]
 [ext_resource type="Script" uid="uid://dqiqdp07uaac1" path="res://scenes/party.gd" id="1_dqwn8"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ugdl1ti3xsuf" path="res://entities/rich_pal.tscn" id="4_dvx2i"]
 [ext_resource type="PackedScene" uid="uid://bhoom3i4a2yav" path="res://entities/wild_buddy.tscn" id="5_7qh7n"]
 [ext_resource type="PackedScene" uid="uid://bjq00mcydyu07" path="res://entities/monkey.tscn" id="6_dvx2i"]
+[ext_resource type="PackedScene" uid="uid://i3b1orguipsk" path="res://entities/auctioneer.tscn" id="7_7qh7n"]
 [ext_resource type="PackedScene" uid="uid://br28v3jti0kqa" path="res://ui/currency.tscn" id="8_7y3g2"]
+[ext_resource type="PackedScene" uid="uid://qumxbw6whhon" path="res://entities/caterer.tscn" id="8_hn6un"]
 
 [node name="Party" type="Node"]
 script = ExtResource("1_dqwn8")
@@ -17,6 +19,8 @@ old_friend = ExtResource("3_7y3g2")
 rich_pal = ExtResource("4_dvx2i")
 wild_buddy = ExtResource("5_7qh7n")
 monkey = ExtResource("6_dvx2i")
+auctioneer = ExtResource("7_7qh7n")
+caterer = ExtResource("8_hn6un")
 
 [node name="PartyController" type="Node" parent="."]
 script = ExtResource("3_2j1a7")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://i3b1orguipsk"]
+
+[ext_resource type="Script" uid="uid://dmqonfldpjd6p" path="res://entities/generic_guest.gd" id="1_enbg2"]
+[ext_resource type="Resource" uid="uid://f7a7lq3qcxs0" path="res://guests/auctioneer.tres" id="2_enbg2"]
+[ext_resource type="Texture2D" uid="uid://hckyslqv6ow0" path="res://assets/auctioneer/s36_Auctioneer_0.png" id="3_j8nwk"]
+[ext_resource type="Texture2D" uid="uid://qgymwdof6gcw" path="res://assets/auctioneer/s36_Auctioneer_1.png" id="4_rwng8"]
+[ext_resource type="Texture2D" uid="uid://eckynwbdjhbs" path="res://assets/auctioneer/s36_Auctioneer_2.png" id="5_6f1h1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jocvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j8nwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rwng8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6f1h1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Auctioneer" type="Node2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+script = ExtResource("1_enbg2")
+metadata = ExtResource("2_enbg2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jocvb")

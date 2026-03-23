@@ -21,6 +21,8 @@ extends Node
 @export var rich_pal: PackedScene
 @export var wild_buddy: PackedScene
 @export var monkey: PackedScene
+@export var auctioneer: PackedScene
+@export var caterer: PackedScene
 
 var curr_pos = start_pos
 var curr_house_members = 0
@@ -110,6 +112,8 @@ func get_first_guest_node(guest_type: Guest_Type) -> PackedScene:
 		"rich_pal": guest = rich_pal
 		"wild_buddy": guest = wild_buddy
 		"monkey": guest = monkey
+		"auctioneer": guest = auctioneer
+		"caterer": guest = caterer
 		_: guest = null
 	return guest
 		

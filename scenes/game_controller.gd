@@ -8,7 +8,6 @@ var party: Node
 var purchase: Node
 
 func reload_party_scene() -> void:
-	print(GameState.get_guest_deck())
 	party = party_scene.instantiate()
 	get_parent().add_child.call_deferred((party))
 	party.completed_round.connect(_on_party_completed_round)

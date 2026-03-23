@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b41iv5srt4w5h"]
 
-[ext_resource type="Script" uid="uid://ct35vjab8sgmb" path="res://purchase_panel.gd" id="1_cnoyx"]
+[ext_resource type="Script" uid="uid://ct35vjab8sgmb" path="res://ui/purchase_panel.gd" id="1_cnoyx"]
 
 [node name="PurchasePanel" type="PanelContainer"]
 custom_minimum_size = Vector2(150, 150)

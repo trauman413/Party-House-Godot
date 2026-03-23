@@ -7,7 +7,9 @@ var global_guests: Dictionary[String, int] = {
 	"rich_pal": 2,
 	"wild_buddy": 4,
 	"hippie": 0,
-	"monkey": 0
+	"monkey": 0,
+	"auctioneer": 0,
+	"caterer": 0
 } 
 var global_money = 0
 var global_population = 0

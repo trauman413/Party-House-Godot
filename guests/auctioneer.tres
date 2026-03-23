@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Guest_Type" load_steps=2 format=3 uid="uid://f7a7lq3qcxs0"]
+
+[ext_resource type="Script" uid="uid://vn8hys2e8v0s" path="res://guests/guest_type.gd" id="1_78jlt"]
+
+[resource]
+script = ExtResource("1_78jlt")
+id = "auctioneer"
+display_name = "Auctioneer"
+money = 3
+cost = 9
