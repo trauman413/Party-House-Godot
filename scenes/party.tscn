@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://qqhr0m68pjya"]
+[gd_scene load_steps=14 format=3 uid="uid://qqhr0m68pjya"]
 
 [ext_resource type="Texture2D" uid="uid://c5mcs27s0r3d8" path="res://icon.svg" id="1_43j68"]
 [ext_resource type="Script" uid="uid://dqiqdp07uaac1" path="res://scenes/party.gd" id="1_dqwn8"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://i3b1orguipsk" path="res://entities/auctioneer.tscn" id="7_7qh7n"]
 [ext_resource type="PackedScene" uid="uid://br28v3jti0kqa" path="res://ui/currency.tscn" id="8_7y3g2"]
 [ext_resource type="PackedScene" uid="uid://qumxbw6whhon" path="res://entities/caterer.tscn" id="8_hn6un"]
+[ext_resource type="PackedScene" uid="uid://c1g2pwsywg2do" path="res://entities/rock_star.tscn" id="9_ketmv"]
+[ext_resource type="PackedScene" uid="uid://updnk10dy1rj" path="res://entities/ticket_taker.tscn" id="10_6j3mf"]
 
 [node name="Party" type="Node"]
 script = ExtResource("1_dqwn8")
@@ -21,6 +23,8 @@ wild_buddy = ExtResource("5_7qh7n")
 monkey = ExtResource("6_dvx2i")
 auctioneer = ExtResource("7_7qh7n")
 caterer = ExtResource("8_hn6un")
+rock_star = ExtResource("9_ketmv")
+ticket_taker = ExtResource("10_6j3mf")
 
 [node name="PartyController" type="Node" parent="."]
 script = ExtResource("3_2j1a7")

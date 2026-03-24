@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdq3s6mt1ruvk"]
+[gd_scene load_steps=13 format=3 uid="uid://bdq3s6mt1ruvk"]
 
 [ext_resource type="PackedScene" uid="uid://b41iv5srt4w5h" path="res://ui/purchase_panel.tscn" id="1_3t24u"]
 [ext_resource type="PackedScene" uid="uid://dyb3bgoiko8dg" path="res://entities/old_friend.tscn" id="1_44i1a"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bjq00mcydyu07" path="res://entities/monkey.tscn" id="7_4osdr"]
 [ext_resource type="PackedScene" uid="uid://i3b1orguipsk" path="res://entities/auctioneer.tscn" id="8_87kx2"]
 [ext_resource type="PackedScene" uid="uid://qumxbw6whhon" path="res://entities/caterer.tscn" id="9_g6dly"]
+[ext_resource type="PackedScene" uid="uid://updnk10dy1rj" path="res://entities/ticket_taker.tscn" id="10_n26at"]
+[ext_resource type="PackedScene" uid="uid://c1g2pwsywg2do" path="res://entities/rock_star.tscn" id="11_71us7"]
 
 [node name="Purchase" type="Node"]
 script = ExtResource("1_u0iaj")
@@ -61,6 +63,16 @@ guest_scene = ExtResource("8_87kx2")
 unique_name_in_owner = true
 layout_mode = 2
 guest_scene = ExtResource("9_g6dly")
+
+[node name="TicketTakerPanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
+unique_name_in_owner = true
+layout_mode = 2
+guest_scene = ExtResource("10_n26at")
+
+[node name="RockStarPanel" parent="GridContainer" instance=ExtResource("1_3t24u")]
+unique_name_in_owner = true
+layout_mode = 2
+guest_scene = ExtResource("11_71us7")
 
 [node name="CurrencyUI" parent="." instance=ExtResource("6_rbukx")]
 

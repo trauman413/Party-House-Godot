@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Guest_Type" load_steps=2 format=3 uid="uid://dwajltbi3fefa"]
+
+[ext_resource type="Script" uid="uid://vn8hys2e8v0s" path="res://guests/guest_type.gd" id="1_fobel"]
+
+[resource]
+script = ExtResource("1_fobel")
+id = "ticket_taker"
+display_name = "Ticket Taker"
+population = -1
+money = 2
+cost = 4

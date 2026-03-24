@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Guest_Type" load_steps=2 format=3 uid="uid://cafanctpcn6lo"]
+
+[ext_resource type="Script" uid="uid://vn8hys2e8v0s" path="res://guests/guest_type.gd" id="1_hpcrm"]
+
+[resource]
+script = ExtResource("1_hpcrm")
+id = "rock_star"
+display_name = "Rock Star"
+population = 3
+money = 2
+trouble = 1
+ability_description = "Trouble!"
+cost = 5
